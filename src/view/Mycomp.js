@@ -16,6 +16,30 @@ class Mycomp extends React.Component {
         )
 
     }
+    removeByAttr = function (arr, attr, value) {
+        var i = arr.length;
+        while (i--) {
+            if (arr[i]
+                && arr[i].hasOwnProperty(attr)
+                && (arguments.length > 2 && arr[i][attr] === value)) {
+
+                arr.splice(i, 1);
+
+            }
+        }
+        return arr;
+    }
+
+    deleteJob = (job) => {
+        this.setState(
+            {
+                arrayJobs: this.removeByAttr(this.state.arrayJobs, "id", job.id)
+            }
+        )
+
+    }
+
+
     state = {
         arrayJobs: [
             { id: 'ac1', title: 'dev', salary: '120' },
@@ -27,9 +51,9 @@ class Mycomp extends React.Component {
         //let name = 'hoangabc';
         return (
             <>
-                <AddComponent addJob={this.addJob}></AddComponent>
+                <AddComponent addJob={this.addJob} ></AddComponent>
 
-                <ChildComp arrayJobs1={this.state.arrayJobs}></ChildComp >
+                <ChildComp arrayJobs1={this.state.arrayJobs} deleteJob={this.deleteJob}></ChildComp >
                 {/* <Funcomp arrayJobs1={this.state.arrayJobs} name={this.state.firstName} /> */}
 
             </>

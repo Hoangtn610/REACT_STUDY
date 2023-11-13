@@ -22,6 +22,12 @@ class ChildComP extends React.Component {
         )
     }
 
+    deleteJob = (job) => {
+        console.log(job)
+        //this.props.deleteJob(job);
+    }
+
+
     render() {
 
         let { arrayJobs1 } = this.props;
@@ -40,6 +46,7 @@ class ChildComP extends React.Component {
                                     return (
                                         <div key={items.id}>
                                             {items.title} - {items.salary}
+                                            <></> <span onClick={(items) => this.deleteJob(items)}>x</span>
                                         </div>
                                     )
                                 })
