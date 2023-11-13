@@ -40,11 +40,11 @@ class AddComponent extends React.Component {
         return (
             <>
                 <form>
-                    <label htmlFor="fname">First name:</label><br />
+                    <label htmlFor="fname">job'Title:</label><br />
                     <input type="text" value={this.state.title}
                         onChange={(event) => this.handleOnTitleEvent(event)}
                     /><br />
-                    <label htmlFor="lname">Last name:</label><br />
+                    <label htmlFor="lname">Salary:</label><br />
                     <input type="text" value={this.state.salary}
                         onChange={(event) => this.handleOnSalaryEvent(event)}
                     />

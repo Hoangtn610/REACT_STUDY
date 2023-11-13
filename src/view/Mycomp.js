@@ -22,9 +22,7 @@ class Mycomp extends React.Component {
             if (arr[i]
                 && arr[i].hasOwnProperty(attr)
                 && (arguments.length > 2 && arr[i][attr] === value)) {
-
                 arr.splice(i, 1);
-
             }
         }
         return arr;
@@ -33,7 +31,8 @@ class Mycomp extends React.Component {
     deleteJob = (job) => {
         this.setState(
             {
-                arrayJobs: this.removeByAttr(this.state.arrayJobs, "id", job.id)
+                //arrayJobs: this.removeByAttr(this.state.arrayJobs, "id", job.id)
+                arrayJobs: this.state.arrayJobs.filter(item => item.id !== job.id)
             }
         )
 
