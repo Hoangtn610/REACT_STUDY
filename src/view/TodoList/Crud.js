@@ -13,31 +13,32 @@ class Crud extends React.Component {
   handleClickEdit = (work) => {
     this.setState({
       workEditId: work.id,
+      todo: work.todo,
     });
+    return;
   };
 
   handleOnChangeEditWork = (event) => {
-    // this.props.updateChangeEdit({
-    //   id: work.id,
-    //   todo: event.target.value,
-    // });
-    // this.setState({
-    //   todo: event.target.value,
-    // });
+    this.setState({
+      todo: event.target.value,
+    });
   };
   handleKeyDown = (event) => {
     if (event.key === "Enter") {
+      this.props.updateChangeEdit({
+        id: this.state.workEditId,
+        todo: this.state.todo,
+      });
+      //console.log(this.state);
       this.setState({
         workEditId: "",
+        todo: "",
       });
       console.log("do validate");
     }
   };
   showToDoList = (work) => {
     if (this.state.workEditId === work.id) {
-      this.setState({
-        todo: work.todo,
-      });
       return (
         <div>
           <input
