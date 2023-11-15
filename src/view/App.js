@@ -1,6 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
-import Mycomp from './Mycomp';
+import logo from "./logo.svg";
+import "./App.css";
+//import Mycomp from './AddJob/Mycomp';
+import TodoList from "./TodoList/TodoList";
 function App() {
   return (
     <div className="App">
@@ -17,8 +18,8 @@ function App() {
         >
           Learn React
         </a>
-        <Mycomp />
-
+        {/* <Mycomp /> */}
+        <TodoList></TodoList>
       </header>
     </div>
   );
