@@ -40,9 +40,8 @@ class Crud extends React.Component {
   showToDoList = (work) => {
     if (this.state.workEditId === work.id) {
       return (
-        <div>
+        <div className="todo">
           <input
-            className="todo"
             type="text"
             value={this.state.todo}
             onChange={(event) => this.handleOnChangeEditWork(event)}

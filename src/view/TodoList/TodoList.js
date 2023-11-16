@@ -37,11 +37,13 @@ class TodoList extends React.Component {
     });
   };
   editWork = (work) => {
-    let work1 = work;
     console.log("cha:", work);
-    var arr = this.state.arrayDoList;
-    arr = arr.filter((item) => item.id !== work.id);
-    arr = [...arr, work];
+    let arr = this.state.arrayDoList;
+
+    arr.map((a) => (a.id === work.id ? (a.todo = work.todo) : a));
+    // arr = arr.filter((item) => item.id !== work.id);
+    // arr = [...arr, work];
+
     this.setState({
       arrayDoList: arr,
     });
