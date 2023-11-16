@@ -7,7 +7,7 @@ import Home from "./Home/Home";
 import listUser from "./ListUser/ListUser";
 import Detail from "./DetailUser/Detail";
 
-import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
+import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 function App() {
   return (
     <div className="App">
@@ -16,13 +16,23 @@ function App() {
         {/* <Mycomp /> */}
         {/* <TodoList></TodoList> */}
 
-        <Routes>
-          <Route exact path="/" Component={Home}></Route>
-          <Route exact path="/todo" Component={TodoList}></Route>
-          <Route exact path="/about" Component={Mycomp}></Route>
-          <Route exact path="/listUser" Component={listUser}></Route>
-          <Route exact path="/:id" Component={Detail}></Route>
-        </Routes>
+        <Switch>
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
+          <Route exact path="/todo" >
+            <TodoList></TodoList>
+          </Route>
+          <Route exact path="/about" >
+            <Mycomp></Mycomp>
+          </Route>
+          <Route exact path="/listUser" >
+            <listUser></listUser>
+          </Route>
+          <Route exact path="/:id" >
+            <Detail></Detail>
+          </Route>
+        </Switch>
       </header>
     </div>
   );

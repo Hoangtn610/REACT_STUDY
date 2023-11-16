@@ -21,7 +21,7 @@ class Home extends React.Component {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn React 1
         </a>
       </>
     );
